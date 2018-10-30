@@ -1,7 +1,10 @@
 import React from "react";
 
+
+let data;
+
 function Heading(props){
-    return <h1>{props.title}</h1>
+    return <h1 className="alert alert-light" role="alert">{props.title}</h1>
 };
 
 
@@ -63,10 +66,10 @@ constructor(props) {
 showQuote() {
     return (
             <li>
-                <h2>{this.state.quote}<br/></h2>
-                <h4>{this.state.author}</h4><br/>
-                <button onClick={this.changeEdit} value={this.state.index}>Edit</button>
-                <button onClick={this.changeDelete} value={this.state.index}>Delete</button>
+                <h2 className="alert alert-success" role="alert">{this.state.quote}<br/></h2>
+                <h4 className="alert alert-warning" role="alert">--{this.state.author}</h4><br/>
+                <button type="button" className="btn btn-primary" onClick={this.changeEdit} value={this.state.index}>Edit</button>
+                <button type="button" className="btn btn-dark" onClick={this.changeDelete} value={this.state.index}>Delete</button>
             </li>)
 }
 
@@ -77,7 +80,7 @@ editForm() {
         <br/>
         <textarea onChange={this.authorChange}>{this.state.author}</textarea>
         <br/>
-        <button onClick={this.saveQuote} value={this.state.index}>Update</button>
+        <button type="button" className="btn btn-success" onClick={this.saveQuote} value={this.state.index}>Update</button>
         </div>
     )
 

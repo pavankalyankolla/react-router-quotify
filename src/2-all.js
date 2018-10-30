@@ -33,9 +33,11 @@ getQuote(){
 
 render(){
     return (
-        <div>
-            <h2>{this.state.quotes.quote} -- {this.state.quotes.author}</h2>
-            <button onClick={this.getQuote}>Generate new quote</button>
+        <div className="card">
+            <div className = "card-body">
+            <h2 className="alert alert-light">{this.state.quotes.quote} -- {this.state.quotes.author}</h2>
+            <button  className="btn-group btn-outline-secondary" onClick={this.getQuote}>Generate new quote</button>
+            </div>
         </div>
     )
 }

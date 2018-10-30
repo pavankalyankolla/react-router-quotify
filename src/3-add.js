@@ -40,20 +40,43 @@ class Quotes extends React.Component {
         localStorage.setItem('key',JSON.stringify(localData));
     }
     
-render(){
+// render(){
+//     return (
+//         <div>
+//             <p>quote</p>
+//             <textarea onChange={this.changeQuote}></textarea>
+//             <br/>
+//             <p>Author</p>
+//             <input type="text" onChange={this.changeAuthor}></input>
+//             <br/>
+//             <button onClick={this.saveToDB}>Save</button>
+//         </div>
+//     )
+// }
+render() {
     return (
         <div>
-            <p>quote</p>
-            <textarea onChange={this.changeQuote}></textarea>
-            <br/>
-            <p>Author</p>
-            <input type="text" onChange={this.changeAuthor}></input>
-            <br/>
-            <button onClick={this.saveToDB}>Save</button>
+           
+            <form onSubmit={this.saveToLocal}>
+                <div className="form-group">
+                    <div className="form-group col-md-4">
+                        <label><h4> Add Quote: </h4></label>
+                        <textarea className="form-control" onChange={this.changeQuote} value={this.state.quoteValue}></textarea>
+                    </div> 
+                    <div className="form-group col-md-4">
+                        <label><h4> Add Author: </h4></label>
+                        <input className="form-control" type="text" onChange={this.changeAuthor} value={this.state.authorValue} />
+                    </div>
+                    <div className="form-group col-md-4">
+                        <input className="form-control btn btn-primary" type="submit" value="Save To Local" />
+                    </div>
+                </div>
+            </form>
         </div>
     )
 }
 }
+
 
 function AddQuote(){
     return (

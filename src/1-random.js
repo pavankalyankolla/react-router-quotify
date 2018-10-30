@@ -62,10 +62,13 @@ saveToLocal() {
 }
 displayQuote(){
     return (
-        <div>
-            <h2>{this.state.quotes.quote} -- {this.state.quotes.author}</h2>
-            <button onClick={this.getQuote}>new quote</button>
-            <button onClick={this.saveToLocal} disabled={this.state.btndisalbe}>{this.state.saveTo}</button>
+        <div className="card">
+            <div className="card-body" >
+            <h2 className="alert alert-light" >{this.state.quotes.quote} </h2>
+            <h4  className="alert alert-info">{this.state.quotes.author}</h4>
+            <button className="btn-group btn-outline-primary" onClick={this.getQuote}>new quote</button>
+            <button className="btn-group btn-outline-info" onClick={this.saveToLocal} disabled={this.state.btndisalbe}>{this.state.saveTo}</button>
+            </div>
         </div>
     )
 }
