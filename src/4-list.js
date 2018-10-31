@@ -1,8 +1,5 @@
 import React from "react";
 
-
-let data;
-
 function Heading(props){
     return <h1 className="alert alert-light" role="alert">{props.title}</h1>
 };
@@ -36,10 +33,10 @@ render(){
     
     return (
         <div>
-            <h4>Listing quotes</h4>
-            <ul>
+                 <h4>Listing quotes</h4>
+                <div>
                 {this.state.array.map((quote,i) => <SingleQuote quotes={quote} index={i} key={i} removeQuote={this.removeQuote}/>)}
-            </ul>
+                </div>
         </div>
     )
 }
@@ -65,24 +62,36 @@ constructor(props) {
 
 showQuote() {
     return (
-            <li>
+            <div>
                 <h2 className="alert alert-success" role="alert">{this.state.quote}<br/></h2>
                 <h4 className="alert alert-warning" role="alert">--{this.state.author}</h4><br/>
                 <button type="button" className="btn btn-primary" onClick={this.changeEdit} value={this.state.index}>Edit</button>
                 <button type="button" className="btn btn-dark" onClick={this.changeDelete} value={this.state.index}>Delete</button>
-            </li>)
+            </div>)
 }
 
+
 editForm() {
-    return (
-        <div>
-        <textarea onChange={this.quoteChange}>{this.state.quote}</textarea>
-        <br/>
-        <textarea onChange={this.authorChange}>{this.state.author}</textarea>
-        <br/>
-        <button type="button" className="btn btn-success" onClick={this.saveQuote} value={this.state.index}>Update</button>
-        </div>
-    )
+     
+return (
+    <div>
+        <form>
+            <div className="form-group col-md-8">
+                <div className="form-group">
+                    <textarea className="form-control" onChange={this.quoteChange}>{this.state.quote}</textarea><br />
+                </div>
+                <div className="form-group">
+                    <textarea className="form-control" type="text" onChange={this.authorChange}>{this.state.author}</textarea><br />
+                </div>
+            </div>
+            <div className="form-group col-md-4">
+                <div className="btn-group">
+                    <button className="form-control btn btn-success" onClick={this.saveQuote} value={this.state.index}> Update </button>
+                </div>
+            </div>
+        </form>
+    </div>
+)
 
 }
 

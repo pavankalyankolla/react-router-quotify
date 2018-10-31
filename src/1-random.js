@@ -37,7 +37,7 @@ getData(){
                 isLoaded : true
             })
         });   
-    },3000  )
+    },2000  )
 }
 
 getQuote(){

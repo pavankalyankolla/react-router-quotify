@@ -56,8 +56,7 @@ class Quotes extends React.Component {
 render() {
     return (
         <div>
-           
-            <form onSubmit={this.saveToLocal}>
+            <form onSubmit={this.saveToDB}>
                 <div className="form-group">
                     <div className="form-group col-md-4">
                         <label><h4> Add Quote: </h4></label>
